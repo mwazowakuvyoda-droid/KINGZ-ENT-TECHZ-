@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KINGZ ENT TECHZ | Cyber Services & Tool Rental</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e74c3c;
+            --accent: #3498db;
+            --accent2: #9b59b6;
+            --dark: #121a24;
+            --darker: #0d121b;
+            --light: #ecf0f1;
+            --success: #2ecc71;
+            --card-bg: #1a252f;
+            --text-light: #f0f0f0;
+            --text-gray: #b0b0b0;
+            --border: #2a3a4d;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            color: var(--text-light);
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+        }
+        header {
+            background: rgba(18, 26, 36, 0.95);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+        }
+        .logo span {
+            color: var(--secondary);
+        }
+        .logo-name {
+            display: flex;
+            align-items: center;
+        }
+        .logo-name span:first-child {
+            margin-right: 5px;
+        }
+        .logo-name span:nth-child(2) {
+            color: var(--accent);
+            font-weight: 500;
+        }
+        .tagline {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-top: 3px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .nav-tab {
+            color: var(--text-light);
+            text-decoration: none;
+            position: relative;
+            padding: 0.5rem 0;
+            white-space: nowrap;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav-tab:hover {
+            color: var(--accent);
+        }
+        .nav-tab.active {
+            color: var(--secondary);
+        }
+        .nav-tab i {
+            font-size: 1.1rem;
+        }
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .user-icon {
+            font-size: 1.3rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(18, 26, 36, 0.85), rgba(18, 26, 36, 0.85)), 
+                        url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 3rem;
+        }
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--text-gray);
+        }
+        .hero-badge {
+            display: inline-block;
+            background: var(--secondary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        .support-number {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(52, 152, 219, 0.2);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            margin-top: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(52, 152, 219, 0.5);
+        }
+        .support-number:hover {
+            background: rgba(52, 152, 219, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+        }
+        
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        .tool-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border);
+            transform: translateY(0);
+            position: relative;
+        }
+        .tool-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+            border-color: rgba(231, 76, 60, 0.3);
+        }
+        .tool-header {
+            background: rgba(0,0,0,0.2);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+        }
+        .tool-server {
+            background: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .tool-image-container {
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        .tool-image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+        }
+        .tool-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .tool-name {
+            font-size: 1.4rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .delivery-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .price-options {
+            margin: 1rem 0;
+            flex-grow: 1;
+        }
+        .price-option {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 0;
+            border-bottom: 1px dashed var(--border);
+        }
+        .btn {
+            display: block;
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+        }
+        .btn-cyber {
+            background: var(--accent2);
+        }
+        .btn-cyber:hover {
+            background: #8e44ad;
+            box-shadow: 0 5px 15px rgba(155, 89, 182, 0.4);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+        .btn-outline:hover {
+            background: rgba(52, 152, 219, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+        }
+        /* Payment Methods */
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        .payment-method {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 12px;
+            min-width: 200px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        .payment-method:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        .payment-method i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+        }
+        .payment-number {
+            font-weight: bold;
+            color: var(--text-light);
+            word-break: break-all;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+        footer {
+            background: rgba(0,0,0,0.3);
+            color: var(--text-gray);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 5rem;
+            border-top: 1px solid var(--border);
+        }
+        
+        /* New Styles */
+        .rent-badge {
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 1rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+            font-weight: 600;
+        }
+        .kes-price {
+            font-size: 0.9rem;
+            color: #e74c3c;
+            font-weight: 600;
+            margin-top: 3px;
+        }
+        .rental-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--text-light);
+            margin: 2rem 0 1rem;
+            position: relative;
+            font-weight: 700;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 0.8rem auto;
+            border-radius: 2px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animated {
+            animation: fadeIn 0.6s ease forwards;
+        }
+        
+        /* Service Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid var(--border);
+            transform: translateY(0);
+            position: relative;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+            border-color: rgba(231, 76, 60, 0.3);
+        }
+        .service-header {
+            background: rgba(0,0,0,0.2);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--border);
+        }
+        .service-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        .service-price {
+            background: var(--accent2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .service-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-description {
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        .service-badge {
+            display: inline-block;
+            background: rgba(52, 152, 219, 0.2);
+            color: var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        .service-price-kes {
+            font-size: 0.9rem;
+            color: #e74c3c;
+            font-weight: 600;
+            margin-top: 5px;
+            text-align: right;
+        }
+        
+        /* Cyber Services Icons */
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            text-align: center;
+            margin: 1rem 0;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .logo-container {
+                margin-bottom: 1rem;
+            }
+            nav {
+                width: 100%;
+                justify-content: space-between;
+            }
+            .nav-tab {
+                margin-left: 0;
+                margin-right: 1rem;
+                font-size: 0.9rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .mobile-menu-btn {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background: transparent;
+                border: none;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+            nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                margin-top: 1rem;
+            }
+            nav.active {
+                display: flex;
+            }
+            .nav-tab {
+                margin: 0.5rem 0;
+                width: 100%;
+                text-align: center;
+                padding: 0.5rem;
+                background: rgba(255,255,255,0.1);
+                border-radius: 4px;
+            }
+        }
+        
+        /* Tab Content Management */
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        #home-content {
+            display: block;
+        }
+        
+        /* New Features */
+        .mobile-menu-btn {
+            display: none;
+        }
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--secondary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 90px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+        }
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Rental Success */
+        .rental-success {
+            text-align: center;
+            padding: 2rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+        }
+        .rental-success i {
+            font-size: 4rem;
+            color: var(--success);
+            margin-bottom: 1.5rem;
+        }
+        .rental-success h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="logo-name">
+                        <span>KINGZ</span>
+                        <span>ENT</span>
+                    </div>
+                    <span>TECHZ</span>
+                </div>
+                <div class="tagline">Premium Cyber Solutions</div>
+            </div>
+            
+            <nav id="mainNav">
+                <a href="#home-content" class="nav-tab active" id="home-tab">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="#tools-content" class="nav-tab" id="tools-tab">
+                    <i class="fas fa-tools"></i> Tools
+                </a>
+                <a href="#cyber-content" class="nav-tab" id="cyber-tab">
+                    <i class="fas fa-shield-alt"></i> Cyber Services
+                </a>
+                <a href="#payment-content" class="nav-tab" id="payment-tab">
+                    <i class="fas fa-credit-card"></i> Payment
+                </a>
+            </nav>
+            
+            <div class="header-actions">
+                <div class="user-icon">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Tab Content -->
+    <section id="home-content" class="tab-content active">
+        <div class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">INSTANT 24/7 AUTO-DELIVERY</div>
+                <h1>Digital Solutions & Cyber Services</h1>
+                <p>Get professional services at the comfort of your home instantly. No waiting! Premium tools and expert assistance for all your digital needs.</p>
+                <a href="tel:0752000550" class="support-number">
+                    <i class="fas fa-phone"></i> Call Support: 0752000550 (24/7)
+                </a>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="rental-success">
+                <i class="fas fa-check-circle"></i>
+                <h2>Instant Access After Payment</h2>
+                <p>Rent tools or services and receive credentials instantly via WhatsApp after payment</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card animated">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="service-body">
+                        <h3 class="service-name">Flashing Tools</h3>
+                        <p class="service-description">
+                            Rent premium digital flashing tools for device unlocking, repair, and customization. 
+                            Instant access after payment.
+                        </p>
+                        <a href="#tools-content" class="btn rent-now">Browse Tools</a>
+                    </div>
+                </div>
+                
+                <div class="service-card animated" style="animation-delay: 0.1s;">
+                    <div class="service-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="service-body">
+                        <h3 class="service-name">Government Services</h3>
+                        <p class="service-description">
+                            Professional assistance with KRA, HELB, driving licenses, and other government services. 
+                            Fast and reliable.
+                        </p>
+                        <a href="#cyber-content" class="btn btn-cyber rent-now">Browse Services</a>
+                    </div>
+                </div>
+                
+                <div class="service-card animated" style="animation-delay: 0.2s;">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="service-body">
+                        <h3 class="service-name">24/7 Support</h3>
+                        <p class="service-description">
+                            Our support team is available 24/7 to assist you with any questions or issues. 
+                            Contact us via phone or WhatsApp.
+                        </p>
+                        <a href="tel:0752000550" class="btn btn-outline">Contact Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="container tab-content" id="tools-content">
+        <div class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">INSTANT 24/7 AUTO-DELIVERY</div>
+                <h1>Digital Flashing Tools Rental</h1>
+                <p>Get instant ID/password automatically after payment. No waiting!</p>
+                <a href="tel:0752000550" class="support-number">
+                    <i class="fas fa-phone"></i> Call Support: 0752000550 (24/7)
+                </a>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-title">Available Tools</h2>
+            <p class="section-subtitle">Select a tool to rent instantly</p>
+            
+            <div class="tools-grid">
+                <!-- Pandora Tool (SERVER1) -->
+                <div class="tool-card animated">
+                    <div class="tool-header">
+                        <span>PANDORA TOOL</span>
+                        <span class="tool-server">SERVER1</span>
+                    </div>
+                    <div class="tool-image-container">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="Pandora Tool Logo">
+                    </div>
+                    <div class="tool-body">
+                        <h3 class="tool-name">Pandora Tool</h3>
+                        <div class="rental-info">
+                            <span><i class="fas fa-clock"></i> Duration:</span>
+                            <span>48 Hours</span>
+                        </div>
+                        <div class="rental-info">
+                            <span><i class="fas fa-sync-alt"></i> Access:</span>
+                            <span>Instant</span>
+                        </div>
+                        <div class="price-options">
+                            <div class="price-option">
+                                <span>Rental Price:</span>
+                                <div class="dual-price">
+                                    <span class="rent-badge">$8.50</span>
+                                    <span class="kes-price">KES 1,105</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn rent-now" data-id="1" data-name="Pandora Tool" data-price="8.50">Rent Now</button>
+                    </div>
+                </div>
+
+                <!-- Cheetah Tool (SERVER1) -->
+                <div class="tool-card animated" style="animation-delay: 0.1s;">
+                    <div class="tool-header">
+                        <span>CHEETAH TOOL</span>
+                        <span class="tool-server">SERVER1</span>
+                    </div>
+                    <div class="tool-image-container">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="Cheetah Tool Logo">
+                    </div>
+                    <div class="tool-body">
+                        <h3 class="tool-name">Cheetah Tool</h3>
+                        <div class="rental-info">
+                            <span><i class="fas fa-clock"></i> Duration:</span>
+                            <span>4 Hours</span>
+                        </div>
+                        <div class="rental-info">
+                            <span><i class="fas fa-sync-alt"></i> Access:</span>
+                            <span>Instant</span>
+                        </div>
+                        <div class="price-options">
+                            <div class="price-option">
+                                <span>Rental Price:</span>
+                                <div class="dual-price">
+                                    <span class="rent-badge">$2.50</span>
+                                    <span class="kes-price">KES 325</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn rent-now" data-id="2" data-name="Cheetah Tool" data-price="2.50">Rent Now</button>
+                    </div>
+                </div>
+
+                <!-- Android Multitool (SERVER2) -->
+                <div class="tool-card animated" style="animation-delay: 0.2s;">
+                    <div class="tool-header">
+                        <span>ANDROID MULTITOOL</span>
+                        <span class="tool-server">SERVER2</span>
+                    </div>
+                    <div class="tool-image-container">
+                        <img src="https://cdn-icons-png.flaticon.com/512/888/888839.png" alt="Android Multitool Logo">
+                    </div>
+                    <div class="tool-body">
+                        <h3 class="tool-name">Android Multitool</h3>
+                        <div class="rental-info">
+                            <span><i class="fas fa-clock"></i> Duration:</span>
+                            <span>2 Hours</span>
+                        </div>
+                        <div class="rental-info">
+                            <span><i class="fas fa-sync-alt"></i> Access:</span>
+                            <span>Instant</span>
+                        </div>
+                        <div class="price-options">
+                            <div class="price-option">
+                                <span>Rental Price:</span>
+                                <div class="dual-price">
+                                    <span class="rent-badge">$1.70</span>
+                                    <span class="kes-price">KES 221</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn rent-now" data-id="3" data-name="Android Multitool" data-price="1.70">Rent Now</button>
+                    </div>
+                </div>
+
+                <!-- Hydra Tool (SERVER2) -->
+                <div class="tool-card animated" style="animation-delay: 0.3s;">
+                    <div class="tool-header">
+                        <span>HYDRA TOOL</span>
+                        <span class="tool-server">SERVER2</span>
+                    </div>
+                    <div class="tool-image-container">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2972/2972185.png" alt="Hydra Tool Logo">
+                    </div>
+                    <div class="tool-body">
+                        <h3 class="tool-name">Hydra Tool</h3>
+                        <div class="rental-info">
+                            <span><i class="fas fa-clock"></i> Duration:</span>
+                            <span>3 Hours</span>
+                        </div>
+                        <div class="rental-info">
+                            <span><i class="fas fa-sync-alt"></i> Access:</span>
+                            <span>Instant</span>
+                        </div>
+                        <div class="price-options">
+                            <div class="price-option">
+                                <span>Rental Price:</span>
+                                <div class="dual-price">
+                                    <span class="rent-badge">$2.60</span>
+                                    <span class="kes-price">KES 338</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn rent-now" data-id="4" data-name="Hydra Tool" data-price="2.60">Rent Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cyber Services Section -->
+    <section class="container tab-content" id="cyber-content">
+        <div class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">GOVERNMENT SERVICES</div>
+                <h1>Professional Cyber & Government Services</h1>
+                <p>Access essential government services at competitive prices</p>
+                <a href="tel:0752000550" class="support-number">
+                    <i class="fas fa-phone"></i> Call Support: 0752000550 (24/7)
+                </a>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-title">Government Services</h2>
+            <p class="section-subtitle">Professional assistance with essential government services</p>
+            
+            <div class="services-grid">
+                <!-- KRA Services -->
+                <div class="service-card animated">
+                    <div class="service-header">
+                        <span class="service-name">KRA Services</span>
+                        <span class="service-price">$2.50</span>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <div class="service-body">
+                        <div class="service-badge">Tax Registration & Filing</div>
+                        <p class="service-description">
+                            Professional assistance with KRA PIN registration, tax compliance, and filing services. 
+                        </p>
+                        <span class="service-price-kes">KES 325</span>
+                        <button class="btn btn-cyber rent-now" data-id="101" data-name="KRA Services" data-price="2.50">Get Service</button>
+                    </div>
+                </div>
+                
+                <!-- HELB Services -->
+                <div class="service-card animated" style="animation-delay: 0.1s;">
+                    <div class="service-header">
+                        <span class="service-name">HELB Services</span>
+                        <span class="service-price">$2.00</span>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="service-body">
+                        <div class="service-badge">Loan Applications</div>
+                        <p class="service-description">
+                            Assistance with HELB loan applications, repayments, and account management. 
+                        </p>
+                        <span class="service-price-kes">KES 260</span>
+                        <button class="btn btn-cyber rent-now" data-id="102" data-name="HELB Services" data-price="2.00">Get Service</button>
+                    </div>
+                </div>
+                
+                <!-- Driving Licenses -->
+                <div class="service-card animated" style="animation-delay: 0.2s;">
+                    <div class="service-header">
+                        <span class="service-name">Driving Licenses</span>
+                        <span class="service-price">$3.00</span>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <div class="service-body">
+                        <div class="service-badge">License Applications</div>
+                        <p class="service-description">
+                            Assistance with driving license applications, renewals, and replacements. 
+                        </p>
+                        <span class="service-price-kes">KES 390</span>
+                        <button class="btn btn-cyber rent-now" data-id="103" data-name="Driving Licenses" data-price="3.00">Get Service</button>
+                    </div>
+                </div>
+                
+                <!-- Good Conduct -->
+                <div class="service-card animated" style="animation-delay: 0.3s;">
+                    <div class="service-header">
+                        <span class="service-name">Good Conduct</span>
+                        <span class="service-price">$3.00</span>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-fingerprint"></i>
+                    </div>
+                    <div class="service-body">
+                        <div class="service-badge">Certificate Processing</div>
+                        <p class="service-description">
+                            Assistance with police clearance and certificate of good conduct applications. 
+                        </p>
+                        <span class="service-price-kes">KES 390</span>
+                        <button class="btn btn-cyber rent-now" data-id="104" data-name="Good Conduct Certificate" data-price="3.00">Get Service</button>
+                    </div>
+                </div>
+                
+                <!-- Government Forms -->
+                <div class="service-card animated" style="animation-delay: 0.4s;">
+                    <div class="service-header">
+                        <span class="service-name">Government Forms</span>
+                        <span class="service-price">$1.50</span>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="service-body">
+                        <div class="service-badge">Form Processing</div>
+                        <p class="service-description">
+                            Professional assistance with completing and submitting government forms. 
+                        </p>
+                        <span class="service-price-kes">KES 195</span>
+                        <button class="btn btn-cyber rent-now" data-id="105" data-name="Government Forms" data-price="1.50">Get Service</button>
+                    </div>
+                </div>
+                
+                <!-- NHIF Services -->
+                <div class="service-card animated" style="animation-delay: 0.5s;">
+                    <div class="service-header">
+                        <span class="service-name">NHIF Services</span>
+                        <span class="service-price">$2.00</span>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="service-body">
+                        <div class="service-badge">Health Insurance</div>
+                        <p class="service-description">
+                            Assistance with NHIF registration, contribution payments, and claims processing. 
+                        </p>
+                        <span class="service-price-kes">KES 260</span>
+                        <button class="btn btn-cyber rent-now" data-id="106" data-name="NHIF Services" data-price="2.00">Get Service</button>
+                    </div>
+                </div>
+                
+                <!-- NSSF Services -->
+                <div class="service-card animated" style="animation-delay: 0.6s;">
+                    <div class="service-header">
+                        <span class="service-name">NSSF Services</span>
+                        <span class="service-price">$2.00</span>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-piggy-bank"></i>
+                    </div>
+                    <div class="service-body">
+                        <div class="service-badge">Social Security</div>
+                        <p class="service-description">
+                            Assistance with NSSF registration, contribution tracking, and benefits claims. 
+                        </p>
+                        <span class="service-price-kes">KES 260</span>
+                        <button class="btn btn-cyber rent-now" data-id="107" data-name="NSSF Services" data-price="2.00">Get Service</button>
+                    </div>
+                </div>
+                
+                <!-- Online Typing -->
+                <div class="service-card animated" style="animation-delay: 0.7s;">
+                    <div class="service-header">
+                        <span class="service-name">Online Typing</span>
+                        <span class="service-price">$0.50/page</span>
+                    </div>
+                    <div class="service-icon">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <div class="service-body">
+                        <div class="service-badge">Document Processing</div>
+                        <p class="service-description">
+                            Professional typing services for documents, applications, and forms. 
+                        </p>
+                        <span class="service-price-kes">KES 65 per page</span>
+                        <button class="btn btn-cyber rent-now" data-id="108" data-name="Online Typing Service" data-price="0.50">Get Service</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section class="container tab-content" id="payment-content">
+        <div class="rental-success">
+            <i class="fas fa-check-circle"></i>
+            <h2>Payment Successful!</h2>
+            <p>Your tool/service rental is being processed. Credentials will be sent via WhatsApp shortly.</p>
+        </div>
+        
+        <h2 class="section-title">Payment Methods</h2>
+        <p class="section-subtitle">Send payment and receive credentials INSTANTLY 24/7</p>
+        
+        <div class="payment-methods">
+            <div class="payment-method">
+                <i class="fab fa-cc-m-pesa"></i>
+                <h4>M-Pesa (Matembo)</h4>
+                <div class="payment-number">0707398858</div>
+            </div>
+            
+            <div class="payment-method">
+                <i class="fas fa-mobile-alt"></i>
+                <h4>Airtel Money (Matembo)</h4>
+                <div class="payment-number">0752000550</div>
+            </div>
+            
+            <div class="payment-method">
+                <i class="fab fa-bitcoin"></i>
+                <h4>Binance Pay</h4>
+                <div class="payment-number">
+                    ID: 1108869988<br>
+                    Name: KINGZ ENT TECHZ
+                </div>
+            </div>
+        </div>
+
+        <div style="background: var(--card-bg); padding: 1.5rem; border-radius: 12px; margin-top: 2rem; border: 1px solid var(--border);">
+            <h3 style="color: var(--text-light); margin-bottom: 1rem; display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-info-circle"></i> How It Works
+            </h3>
+            <ol style="padding-left: 1.5rem; color: var(--text-gray);">
+                <li style="margin-bottom: 0.5rem;">Choose your tool or service</li>
+                <li style="margin-bottom: 0.5rem;">Send exact amount via payment method</li>
+                <li style="margin-bottom: 0.5rem;">WhatsApp transaction code to 0707398858</li>
+                <li style="margin-bottom: 0.5rem;">Receive login credentials INSTANTLY</li>
+                <li>Access begins immediately</li>
+            </ol>
+            <p style="margin-top: 1.5rem; font-weight: 500; color: var(--accent); display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-phone"></i> 
+                <a href="tel:0752000550" style="color: inherit; text-decoration: none;">
+                    Need help? Call us anytime: 0752000550
+                </a>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2023 KINGZ ENT TECHZ</p>
+            <p style="margin-top: 0.5rem;">
+                24/7 Support: 
+                <a href="https://wa.me/254707398858" style="color: var(--accent); text-decoration: none;">WhatsApp 0707398858</a> | 
+                <a href="tel:0752000550" style="color: var(--accent); text-decoration: none;">Call 0752000550</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/254707398858" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Rent Now functionality
+        const rentNowButtons = document.querySelectorAll('.rent-now');
+        
+        // Tab management
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Update active tab
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Hide all tab contents
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Show the selected tab content
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).classList.add('active');
+                
+                // Close mobile menu if open
+                document.getElementById('mainNav').classList.remove('active');
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            });
+        });
+        
+        // Rent Now button functionality
+        rentNowButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const productName = this.dataset.name || "Selected Service";
+                
+                // Update active tab
+                document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+                document.getElementById('payment-tab').classList.add('active');
+                
+                // Hide all tab contents
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Show payment content
+                document.getElementById('payment-content').classList.add('active');
+                
+                // Scroll to top
+                window.scrollTo(0, 0);
+            });
+        });
+        
+        // Back to top button
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Animate elements on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animated');
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = 1;
+                    element.style.visibility = 'visible';
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Initial check
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        mobileMenuBtn.addEventListener('click', function() {
+            document.getElementById('mainNav').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
